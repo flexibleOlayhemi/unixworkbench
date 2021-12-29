@@ -1,16 +1,16 @@
 function guesinggame {
 echo "How many files are in the current directory?"
-fileNum=ls -l | wc -l
-echo "Enter your guess: "
-read response
-echo "You entered: $response "
+fileNum=$(ls| wc -l)
 start=1
 while [[ $start -gt 0 ]]
 do 
+echo "Enter your guess: "
+read response
+echo "You entered: $response "
 if [[ $response -gt $fileNum ]]
 then 
 	echo "Guess too High, try again"
-elif [[$response -lt $fileNum]]
+elif [[ $response -lt $fileNum ]]
 then 
 	echo "Guess too low, try agin"
 else
